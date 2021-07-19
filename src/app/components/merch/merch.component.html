@@ -1,0 +1,10 @@
+<div class="merch-container">
+  <div *ngFor="let product of product$ | async" class="card bg-dark merch-content">
+    <img [src]="product.image" class="card-img-top" [alt]="product.name">
+    <div class="card-body">
+      <p class="card-text">{{ product.description }}
+      </p>
+      <strong>{{ product.price | currency }}</strong>
+    </div>
+  </div>
+</div>

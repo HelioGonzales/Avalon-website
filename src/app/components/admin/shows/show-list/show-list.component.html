@@ -1,0 +1,28 @@
+<div class="table-responsive table-content">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Place</th>
+        <th scope="col">Time</th>
+        <th scope="col">Link</th>
+        <th scope="col">ID</th>
+        <th class="d-none d-sm-block" scope="col">Actions</th>
+    </thead>
+    <tbody>
+      <tr class="table-info" *ngFor="let show of show$ | async">
+        <td scope="row">{{ show.date | date}}</td>
+        <td scope="row">{{ show.place}}</td>
+        <td scope="row">{{ show.time }}</td>
+        <td scope="row">{{ show.link }}</td>
+        <td scope="row">{{ show.id }}</td>
+        <td scope="row" class="btn-group d-none d-sm-block" role="group">
+          <button type="submit" class="btn btn-outline-warning m-1" (click)="onGoToEdit(show)">Edit</button>
+          <button type="submit" class="btn btn-outline-warning m-1" (click)="onGoToDetail(show)">Details</button>
+          <button type="submit" class="btn btn-outline-danger m-1" (click)="onGoToDelete(show.id)">Delete</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

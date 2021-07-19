@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url(https://i0.wp.com/getwallpapers.com/wallpaper/full/a/c/2/1126954-free-cool-black-background-designs-1920x1200-for-computer.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+router-outlet {
+  flex-grow: 1;
+}

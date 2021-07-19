@@ -1,0 +1,19 @@
+<div class="form-container">
+  <div class="contact-content">
+
+    <form [formGroup]="form" (ngSubmit)="login($event)">
+      <div class="mb-3">
+        <div class="col-sm-10">
+          <input formControlName="email" type="text" class="form-control" placeholder="email">
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="col-sm-10">
+          <input formControlName="password" type="password" class="form-control" placeholder="password">
+        </div>
+      </div>
+      <button class="btn btn-primary" [disabled]="form.invalid" type="submit">Login</button>
+    </form>
+  </div>
+
+</div>

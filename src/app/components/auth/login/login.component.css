@@ -1,0 +1,12 @@
+.form-container {
+  padding: 5rem;
+  padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.contact-content {
+  width: 60vw;
+}

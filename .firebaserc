@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "avalon-web-ac469": {
+      "hosting": {
+        "avalon-web": [
+          "avalon-web-ac469"
+        ]
+      }
+    }
+  }
+}

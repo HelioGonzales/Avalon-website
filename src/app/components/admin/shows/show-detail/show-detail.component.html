@@ -1,0 +1,30 @@
+<div class="card mt-2">
+  <div class="card-header">
+    Show Details
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Date: <h5>{{ show.date | date }}</h5>
+      </li>
+      <li class="list-group-item">
+        Place: <h5>{{ show.place }}</h5>
+      </li>
+      <li class="list-group-item">
+        Time: <h5>{{ show.time }}</h5>
+      </li>
+      <li class="list-group-item">
+        Link: <h5>{{ show.link }}</h5>
+      </li>
+      <li class="list-group-item">
+        ID: <h5>{{ show.id }}</h5>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-warning m-1 btn-sm" (click)="onGoToEdit()">Edit</button>
+    <button type="button" class="btn btn-outline-danger m-1 btn-sm" (click)="onGoToDelete()">Delete</button>
+  </div>
+</div>
+
+<button type="button" class="btn btn-secondary m-2" (click)="onGoBackToList()">Back to List</button>

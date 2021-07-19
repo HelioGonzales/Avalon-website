@@ -1,0 +1,17 @@
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-nav {
+  height: 6rem;
+
+  background-color: #383838;
+}
+
+.logo {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+}

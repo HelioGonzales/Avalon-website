@@ -1,0 +1,13 @@
+.music-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.music-card {
+  margin: 2rem;
+}
+
+.music-card:hover {
+  opacity: 0.8;
+  transition: all 0.9 ease;
+}

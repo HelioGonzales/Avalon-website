@@ -1,0 +1,15 @@
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+  justify-content: center;
+  justify-items: center;
+}
+
+.video-card {
+  margin: 2rem;
+}
+
+iframe {
+  width: 800px;
+  height: 500px;
+}

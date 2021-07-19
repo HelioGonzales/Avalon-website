@@ -1,0 +1,33 @@
+<div class="card mt-2">
+  <div class="card-header">
+    Product Details
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Name: <h5>{{ product.name }}</h5>
+      </li>
+      <li class="list-group-item">
+        Description: <h5>{{ product.description }}</h5>
+      </li>
+      <li class="list-group-item">
+        Precio: <h5>{{ product.price }}</h5>
+      </li>
+      <li class="list-group-item">
+        Stock: <h5>{{ product.stock }}</h5>
+      </li>
+      <li class="list-group-item">
+        ID: <h5>{{ product.id }}</h5>
+      </li>
+      <li>
+        <img style="width: 200px;" [src]="product.image" [alt]="product.name">
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-warning m-1 btn-sm" (click)="onGoToEdit()">Edit</button>
+    <button type="button" class="btn btn-outline-danger m-1 btn-sm" (click)="onGoToDelete()">Delete</button>
+  </div>
+</div>
+
+<button type="button" class="btn btn-secondary m-2" (click)="onGoBackToList()">Back to List</button>

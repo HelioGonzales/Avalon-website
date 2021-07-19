@@ -1,0 +1,29 @@
+<div class="admin-header-container">
+  <nav class="menu-nav navbar navbar-expand-lg">
+
+    <div class="nav-content">
+      <div class="dropdown nav-dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Products
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" routerLink="/admin/create-product">Create Products</a></li>
+          <li><a class="dropdown-item" routerLink="/admin/product-list">Products List</a></li>
+        </ul>
+      </div>
+      <div class="dropdown nav-dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Shows
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" routerLink="/admin/create-show">Create Show</a></li>
+          <li><a class="dropdown-item" routerLink="/admin/show-list">Show List</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="btn btn-danger" (click)="logout()">Logout</button>
+  </nav>
+</div>
