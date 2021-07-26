@@ -1,12 +1,24 @@
 .form-container {
-  padding: 5rem;
-  padding-bottom: 10rem;
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  min-height: 100vh;
+  padding: 3rem;
+  margin-top: 5rem;
 }
 
 .contact-content {
   width: 50vw;
+  color: white;
+}
+
+.btn-color {
+  background-color: #2d0e0e;
+  color: white;
+}
+
+.btn-color:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
 }

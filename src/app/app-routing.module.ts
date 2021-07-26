@@ -25,6 +25,13 @@ const routes: Routes = [
           import('./components/merch/merch.module').then((m) => m.MerchModule),
       },
       {
+        path: 'merch-detail/:id',
+        loadChildren: () =>
+          import('./components/merch-detail/merch-detail.module').then(
+            (m) => m.MerchDetailModule
+          ),
+      },
+      {
         path: 'music',
         loadChildren: () =>
           import('./components/music/music.module').then((m) => m.MusicModule),
@@ -57,8 +64,16 @@ const routes: Routes = [
         loadChildren: () =>
           import('./components/admin/admin.module').then((m) => m.AdminModule),
       },
+      {
+        path: 'checkout',
+        loadChildren: () =>
+          import('./components/checkout/checkout.module').then(
+            (m) => m.CheckoutModule
+          ),
+      },
     ],
   },
+
   {
     path: '**',
     component: PageNotFoundComponent,

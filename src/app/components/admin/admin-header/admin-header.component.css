@@ -1,14 +1,22 @@
-.admin-header-container {
-  /* margin-bottom: 23rem; */
-  background-color: black;
-  height: 6rem;
+nav {
+  background-color: white;
+  margin-top: 6.5rem;
 }
-
 .nav-content {
   display: flex;
-  align-content: center;
 }
 
 .nav-dropdown {
-  margin: 1rem;
+  margin-right: 1rem;
+}
+
+.btn-color {
+  background-color: #2d0e0e;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .nav-content {
+    flex-direction: column;
+  }
 }

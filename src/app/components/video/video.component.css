@@ -3,6 +3,8 @@
   grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
   justify-content: center;
   justify-items: center;
+  padding: 3rem;
+  margin-top: 5rem;
 }
 
 .video-card {
@@ -10,6 +12,6 @@
 }
 
 iframe {
-  width: 800px;
-  height: 500px;
+  width: 70vw;
+  height: 70vh;
 }

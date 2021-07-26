@@ -1,18 +1,109 @@
-.merch-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  margin: 2rem;
-  /* padding: 5rem;
-  padding-bottom: 10rem; */
-  color: white;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  margin-top: 5rem;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container .box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.8);
+  margin: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.container .box .imgBox {
+  position: relative;
+  overflow: hidden;
+}
+
+.container .box .imgBox img {
+  max-width: 100%;
+  width: 300px;
+  height: 300px;
+  transition: transform 2s;
+}
+
+.container .box:hover .imgBox img {
+  transform: scale(1.2);
+}
+
+.container .box .details {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  transform: scaleY(0);
+  transition: transform 0.5s;
+}
+
+.container .box:hover .details {
+  transform: scaleY(1);
+}
+
+.container .box .details .content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 100px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.container .box .details .content h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.container .box .details .content p {
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+/* ************************************************** */
+/* .merch-container {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  margin-top: 5rem;
+  padding: 2rem;
+  min-height: 100vh;
 }
 
 .merch-content {
   margin: 1rem;
+  color: white;
+  width: 300px;
+  max-width: 440px;
+  max-height: 463px;
+  border: none;
+}
+
+.merch-content:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+.card-body {
+  background-color: #2d0e0e;
 }
 
 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
+} */ ;

@@ -1,0 +1,62 @@
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmitCheckoutForm()" class="text-white">
+    <fieldset>
+
+      <div class="form-group">
+        <label for="exampleInputName1" class="form-label mt-4">Name</label>
+        <input formControlName="name" type="name" class="form-control" id="exampleInputName1"
+          aria-describedby="nameHelp" placeholder="Enter name">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+        <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+          aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+
+      <fieldset class="form-group">
+        <legend class="mt-4">Choose</legend>
+
+        <div class="form-check">
+          <input (change)="onPickupDelivery(false)" class="form-check-input" type="radio" value="pickup"
+            name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Pickup
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input (change)="onPickupDelivery(true)" class="form-check-input" type="radio" value="delivery"
+            name="flexRadioDefault" id="flexRadioDefault1" checked>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Delivery
+          </label>
+        </div>
+      </fieldset>
+
+      <ng-container *ngIf="isDelivery; else showStores">
+        <div class="form__element">
+          <input formControlName="shippingAddress" class="form-control" type="text" placeholder="Shipping address"
+            name="shippingAddress">
+        </div>
+
+        <div class="form__element">
+          <input formControlName="city" class="form-control" type="text" placeholder="city" name="city">
+        </div>
+      </ng-container>
+
+      <ng-template #showStores>
+        <div class="form-group">
+          <label for="exampleSelect1" class="form-label mt-4">Example select</label>
+          <select formControlName="store" class="form-select" id="exampleSelect1">
+            <option *ngFor="let store of stores">{{ store.store }}</option>
+          </select>
+        </div>
+      </ng-template>
+
+
+      <app-cart-detail></app-cart-detail>
+      <button [disabled]="!form.valid" type="submit" class="btn btn-color">Submit</button>
+    </fieldset>
+  </form>
+</div>

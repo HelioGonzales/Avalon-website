@@ -16,7 +16,11 @@ export class ShowDetailComponent implements OnInit {
     this.show = navigation?.extras?.state?.value;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (typeof this.show === 'undefined') {
+      this.router.navigate(['/admin/show-list']);
+    }
+  }
 
   onGoToEdit(): void {
     const navigationExtras: NavigationExtras = {

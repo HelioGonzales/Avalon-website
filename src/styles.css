@@ -1,9 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
 body {
-  background-image: url(https://i0.wp.com/getwallpapers.com/wallpaper/full/a/c/2/1126954-free-cool-black-background-designs-1920x1200-for-computer.jpg);
-  background-repeat: no-repeat;
+  background-image: url(./assets/cover-bg.jpg);
   background-size: cover;
+  /* position: relative; */
+  background-repeat: no-repeat;
+  background-position: center center;
 }
+
+/* body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+} */
 
 app-layout {
   display: flex;

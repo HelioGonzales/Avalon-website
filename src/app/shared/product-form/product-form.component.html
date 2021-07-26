@@ -1,4 +1,4 @@
-<div class="form-container">
+<div class="container-fluid form-container">
   <form class="mt-3 col-md-8 offset-md-4" (ngSubmit)="onSaveCreateProduct()" [formGroup]="form">
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -10,22 +10,25 @@
       <div class="form-group col-md-6">
         <input type="number" class="form-control" formControlName="price" placeholder="Price">
       </div>
-    </div>
-    <div class="form-row">
       <div class="form-group col-md-6">
         <input type="number" class="form-control" formControlName="stock" placeholder="Stock">
       </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <img *ngIf="(image$ | async) as image" [src]="image" alt="" style="width: 100px;">
 
+      <div class="form-group col-md-6">
+        <img *ngIf="(image$ | async) as image" [src]="image" alt="product-image">
         <input style="color: white;" type="file" (change)="uploadImage($event)" id="inputFile">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+            [style.width]="(uploadPercent | async ) +  '%'">
+          </div>
+        </div>
       </div>
+      <br>
+      <button type="submit" class="btn btn-color">Save</button>
     </div>
-    <button type="submit" class="btn bg-dark btn-block text-light">Save</button>
   </form>
+
+  <button type="button" class="btn btn-secondary m-2 btn-product" (click)="onGoBacktoList()">Back to List</button>
 </div>
-<button type="button" class="btn btn-secondary m-2 btn-product" (click)="onGoBacktoList()">Back to List</button>
 
 <!-- NO PONER!!! formControlName="image" -->

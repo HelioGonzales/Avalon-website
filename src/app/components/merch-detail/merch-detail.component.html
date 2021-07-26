@@ -1,0 +1,20 @@
+<div class="merch-detail-container ">
+  <div class="merch-detail-content">
+    <div class="merch-detail-content-item imgItem">
+      <img [src]="product?.image" [alt]="product?.name">
+    </div>
+    <div class="merch-detail-content-item contentItem">
+      <h2>{{ product?.name }}</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate sit commodi vitae sunt et facere quia
+        obcaecati ex natus doloremque, dolorem voluptatem repellat veniam accusamus nihil deleniti incidunt repudiandae
+        magnam.</p>
+
+      <h4>from {{product?.price | currency }}</h4>
+
+      <p>{{ product?.description }}</p>
+      <button [disabled]="product?.stock === 0" (click)="addToCart(product)" class="btn btn-color">Add to
+        cart</button>
+    </div>
+
+  </div>
+</div>

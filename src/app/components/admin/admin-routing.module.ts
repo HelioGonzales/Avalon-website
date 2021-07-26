@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
+import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
+import { OrderListComponent } from './orders/order-list/order-list.component';
 import { CreateProductComponent } from './products/create-product/create-product.component';
 import { EditProductComponent } from './products/edit-product/edit-product.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
@@ -15,6 +17,10 @@ const routes: Routes = [
     path: '',
     component: AdminComponent,
     children: [
+      {
+        path: '',
+        component: OrderListComponent,
+      },
       {
         path: 'create-product',
         component: CreateProductComponent,
@@ -46,6 +52,14 @@ const routes: Routes = [
       {
         path: 'show-detail',
         component: ShowDetailComponent,
+      },
+      {
+        path: 'order-list',
+        component: OrderListComponent,
+      },
+      {
+        path: 'order-detail',
+        component: OrderDetailComponent,
       },
     ],
   },

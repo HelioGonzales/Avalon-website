@@ -1,8 +1,20 @@
-div {
-  background-color: #383838;
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d0e0e;
   height: 6rem;
-  color: white;
-  font-weight: bold;
+  color: #ffffff;
+  font-size: 2rem;
   text-align: center;
-  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  margin: 2rem;
+  color: white;
 }

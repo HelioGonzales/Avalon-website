@@ -1,10 +1,9 @@
 .form-container {
-  padding: 5rem;
-  padding-bottom: 10rem;
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
+  height: 90vh;
 }
 
 .contact-content {

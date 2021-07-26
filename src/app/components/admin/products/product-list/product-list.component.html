@@ -1,25 +1,23 @@
-<div class="table-responsive table-content">
-  <table class="table table-dark">
+<div class="container-fluid table-responsive table-container">
+  <table class="table text-light">
     <thead>
       <tr>
-        <th scope="col">Image</th>
         <th scope="col">Name</th>
         <th scope="col">Description</th>
         <th scope="col">Price</th>
         <th scope="col">Stock</th>
-        <th scope="col">ID</th>
+        <!--   -->
         <th class="d-none d-sm-block" scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="table-info" *ngFor="let product of product$ | async">
-        <td scope="row"><img [src]="product.image" [alt]="product.name" style="width: 40px;"></td>
+      <tr *ngFor="let product of product$ | async">
         <td scope="row">{{ product.name}}</td>
-        <td scope="row">{{product.description}}</td>
-        <td scope="row">{{product.price}}</td>
-        <td scope="row">{{ product.stock }}</td>
-        <td scope="row">{{ product.id }}</td>
-        <td scope="row" class="btn-group d-none d-sm-block" role="group">
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+        <td>{{ product.stock }}</td>
+        <!--  -->
+        <td class="btn-group d-none d-sm-block" role="group">
           <button type="submit" class="btn btn-outline-warning m-1" (click)="onGoToEdit(product)">Edit</button>
           <button type="submit" class="btn btn-outline-warning m-1" (click)="onGoToDetail(product)">Details</button>
           <button type="submit" class="btn btn-outline-danger m-1" (click)="onGoToDelete(product.id)">Delete</button>

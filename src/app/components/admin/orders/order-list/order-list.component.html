@@ -1,0 +1,28 @@
+<div class="container-fluid table-responsive table-container">
+  <table class="table text-light">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Store</th>
+        <th scope="col">City</th>
+        <th scope="col">Total</th>
+        <!--   -->
+        <th class="d-none d-sm-block" scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders$ | async">
+        <td scope="row">{{ order.date }}</td>
+        <td>{{ order.store }}</td>
+        <td>{{ order.city }}</td>
+        <td>{{ order.total }}</td>
+        <!--  -->
+        <td class="btn-group d-none d-sm-block" role="group">
+          <button type="submit" class="btn btn-outline-warning m-1" (click)="onGoToDetail(order)">Details</button>
+          <button type="submit" class="btn btn-outline-danger m-1" (click)="onGoToDelete(order?.id)">Delete</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

@@ -14,6 +14,8 @@ import { CreateShowComponent } from './shows/create-show/create-show.component';
 import { EditShowComponent } from './shows/edit-show/edit-show.component';
 import { ShowDetailComponent } from './shows/show-detail/show-detail.component';
 import { ShowListComponent } from './shows/show-list/show-list.component';
+import { OrderListComponent } from './orders/order-list/order-list.component';
+import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ShowListComponent } from './shows/show-list/show-list.component';
     EditShowComponent,
     ShowDetailComponent,
     ShowListComponent,
+    OrderListComponent,
+    OrderDetailComponent,
   ],
   imports: [
     CommonModule,

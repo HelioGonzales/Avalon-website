@@ -16,6 +16,8 @@ export class ProductFormComponent implements OnInit {
   product!: Product;
   form!: FormGroup;
   image$!: Observable<any>;
+  uploadPercent!: Observable<any>;
+
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -41,6 +43,7 @@ export class ProductFormComponent implements OnInit {
     const name = `Product-Image/${file.name}`;
     const fileRef = this.storage.ref(name);
     const task = this.storage.upload(name, file);
+    this.uploadPercent = task.percentageChanges();
 
     task
       .snapshotChanges()
