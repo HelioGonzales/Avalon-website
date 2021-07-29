@@ -1,29 +1,46 @@
-<div class="container-fluid table-responsive table-container">
+<!-- container-fluid table-responsive -->
+<div class=" table-container">
   <table class="table text-light">
     <thead>
       <tr>
         <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Price</th>
+        <!-- <th scope="col" class="d-none d-sm-block">Description</th> -->
+        <!-- <th scope="col" class="d-none d-sm-block">Price</th> -->
         <th scope="col">Stock</th>
-        <!--   -->
-        <th class="d-none d-sm-block" scope="col">Actions</th>
+        <!-- class="d-none d-sm-block"  -->
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let product of product$ | async">
         <td scope="row">{{ product.name}}</td>
-        <td>{{product.description}}</td>
-        <td>{{product.price}}</td>
+        <!-- <td class="d-none d-sm-block">{{product.description}}</td> -->
+        <!-- <td class="d-none d-sm-block">{{product.price}}</td> -->
         <td>{{ product.stock }}</td>
-        <!--  -->
-        <td class="btn-group d-none d-sm-block" role="group">
-          <button type="submit" class="btn btn-outline-warning m-1" (click)="onGoToEdit(product)">Edit</button>
-          <button type="submit" class="btn btn-outline-warning m-1" (click)="onGoToDetail(product)">Details</button>
-          <button type="submit" class="btn btn-outline-danger m-1" (click)="onGoToDelete(product.id)">Delete</button>
+        <!-- class="btn-group d-none d-sm-block" -->
+        <td role="group">
+          <div class="dropdown nav-dropdown">
+            <button class="btn btn-color dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Actions
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><button type="submit" class="btn btn-outline-warning m-1 " (click)="onGoToEdit(product)">Edit</button>
+              </li>
+              <li><button type="submit" class="btn btn-outline-warning m-1 "
+                  (click)="onGoToDetail(product)">Details</button></li>
+              <li><button type="submit" class="btn btn-outline-danger m-1"
+                  (click)="onGoToDelete(product.id)">Delete</button></li>
+            </ul>
+          </div>
+
         </td>
       </tr>
 
     </tbody>
   </table>
 </div>
+
+<!-- <button type="submit" class="btn btn-outline-warning m-1" (click)="onGoToEdit(product)">Edit</button>
+          <button type="submit" class="btn btn-outline-warning m-1" (click)="onGoToDetail(product)">Details</button>
+          <button type="submit" class="btn btn-outline-danger m-1" (click)="onGoToDelete(product.id)">Delete</button> -->

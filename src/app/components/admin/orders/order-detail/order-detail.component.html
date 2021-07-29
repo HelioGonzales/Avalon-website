@@ -1,4 +1,45 @@
-<div class="card mt-2  card-container">
+<div class="merch-detail-container ">
+  <div class="merch-detail-content">
+    <div class="merch-detail-content-item contentItem">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Date: {{ order?.date }}
+        </li>
+        <li class="list-group-item">
+          Name: {{ order?.name }}
+        </li>
+        <li class="list-group-item">
+          City: {{ order?.city }}
+        </li>
+        <li class="list-group-item">
+          ShippingAddress: {{ order?.shippingAddress }}
+        </li>
+        <li class="list-group-item">
+          Store: {{ order?.store }}
+        </li>
+        <li class="list-group-item">
+          Total: {{ order?.total | currency }}
+        </li>
+        <li *ngFor="let cart of order?.cart" class="list-group-item">
+          <div style="padding: 2rem;">
+            Name: <h5>{{ cart?.name }}</h5>
+            Description: <h5>{{ cart?.description }}</h5>
+            Price: <h5>{{ cart?.price }}</h5>
+            Quantity: <h5>{{ cart?.qty }}</h5>
+            ID: <h5>{{ cart?.id }}</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-danger m-1 btn-sm" (click)="onGoToDelete()">Delete</button>
+    </div>
+    <button type="button" class="btn btn-secondary m-1" (click)="onGoBackToList()">Back to List</button>
+  </div>
+</div>
+
+
+<!-- <div class="card mt-2  card-container">
   <div class=" card-header">
     Order Details
   </div>
@@ -29,9 +70,6 @@
 
         </div>
       </li>
-      <!-- <li>
-        <img style="width: 100px;" [src]="" [alt]="product.name">
-      </li> -->
     </ul>
   </div>
   <div class="btn-group" role="group">
@@ -41,4 +79,4 @@
 
 </div>
 
-<button type="button" class="btn btn-secondary m-1" (click)="onGoBackToList()">Back to List</button>
+<button type="button" class="btn btn-secondary m-1" (click)="onGoBackToList()">Back to List</button> -->

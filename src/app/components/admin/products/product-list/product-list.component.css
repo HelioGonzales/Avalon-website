@@ -3,3 +3,8 @@
   padding: 2rem;
   text-align: center;
 }
+
+.btn-color {
+  background-color: #2d0e0e;
+  color: white;
+}

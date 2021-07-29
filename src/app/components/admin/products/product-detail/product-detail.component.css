@@ -1,5 +1,71 @@
-.card-container {
-  margin: auto;
-  width: 60vw;
-  /* height: auto; */
+.merch-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80vw;
+  min-height: 100vh;
+  color: white;
+  padding: 1rem;
+  margin-top: 5rem;
 }
+
+.merch-detail-content {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.merch-detail-content-item {
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+
+.imgItem {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-color {
+  background-color: #2d0e0e;
+  color: white;
+}
+
+.btn-color:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+@media (max-width: 800px) {
+  .merch-detail-content {
+    flex-direction: column;
+  }
+
+  .merch-detail-content-item {
+    min-width: 100%;
+    height: 100%;
+  }
+}
+
+/* .card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
+}
+
+.card-content {
+  height: 80vh;
+} */

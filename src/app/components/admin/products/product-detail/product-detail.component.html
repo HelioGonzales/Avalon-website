@@ -1,34 +1,69 @@
-<div class="card mt-2  card-container">
-  <div class=" card-header">
-    Product Details
-  </div>
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        Name: <h5>{{ product.name }}</h5>
-      </li>
-      <li class="list-group-item">
-        Description: <h5>{{ product.description }}</h5>
-      </li>
-      <li class="list-group-item">
-        Precio: <h5>{{ product.price }}</h5>
-      </li>
-      <li class="list-group-item">
-        Stock: <h5>{{ product.stock }}</h5>
-      </li>
-      <li class="list-group-item">
-        ID: <h5>{{ product.id }}</h5>
-      </li>
-      <li>
-        <img style="width: 100px;" [src]="product.image" [alt]="product.name">
-      </li>
-    </ul>
-  </div>
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-outline-warning m-1 btn-sm" (click)="onGoToEdit()">Edit</button>
-    <button type="button" class="btn btn-outline-danger m-1 btn-sm" (click)="onGoToDelete()">Delete</button>
+<!-- <div class="card-container">
+  <div class="card card-content">
+    <div class=" card-header">
+      Product Details
+    </div>
+    <div class="card-body">
+
+      <ul class="list-group  list-group-flush">
+        <li class="list-group-item">
+          Name: <h5>{{ product?.name }}</h5>
+        </li>
+        <li class="list-group-item">
+          Description: <h5>{{ product?.description }}</h5>
+        </li>
+        <li class="list-group-item">
+          Precio: <h5>{{ product?.price }}</h5>
+        </li>
+        <li class="list-group-item">
+          Stock: <h5>{{ product?.stock }}</h5>
+        </li>
+        <li class="list-group-item">
+          ID: <h5>{{ product?.id }}</h5>
+        </li>
+        <li>
+          <img style="width: 100px; height: 100px;" [src]="product?.image" [alt]="product?.name">
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-warning m-1 btn-sm" (click)="onGoToEdit()">Edit</button>
+      <button type="button" class="btn btn-outline-danger m-1 btn-sm" (click)="onGoToDelete()">Delete</button>
+    </div>
+
   </div>
 
+  <button type="button" class="btn btn-secondary m-1" (click)="onGoBackToList()">Back to List</button>
+</div> -->
+
+<div class="merch-detail-container ">
+  <div class="merch-detail-content">
+    <div class="merch-detail-content-item imgItem">
+      <img [src]="product?.image" [alt]="product?.name">
+    </div>
+    <div class="merch-detail-content-item contentItem">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Name: {{ product?.name }}
+        </li>
+        <li class="list-group-item">
+          Description: {{ product?.description }}
+        </li>
+        <li class="list-group-item">
+          Stock: {{ product?.stock }}
+        </li>
+        <li class="list-group-item">
+          ID: {{ product?.id}}
+        </li>
+        <li class="list-group-item">
+          Price: {{product?.price | currency }}
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-warning m-1 btn-sm" (click)="onGoToEdit()">Edit</button>
+      <button type="button" class="btn btn-outline-danger m-1 btn-sm" (click)="onGoToDelete()">Delete</button>
+    </div>
+    <button type="button" class="btn btn-secondary m-1" (click)="onGoBackToList()">Back to List</button>
+  </div>
 </div>
-
-<button type="button" class="btn btn-secondary m-1" (click)="onGoBackToList()">Back to List</button>

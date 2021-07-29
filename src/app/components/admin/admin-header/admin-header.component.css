@@ -19,4 +19,8 @@ nav {
   .nav-content {
     flex-direction: column;
   }
+
+  .nav-dropdown {
+    margin-bottom: 1rem;
+  }
 }

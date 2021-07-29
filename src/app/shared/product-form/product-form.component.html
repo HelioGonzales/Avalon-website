@@ -1,32 +1,39 @@
-<div class="container-fluid form-container">
-  <form class="mt-3 col-md-8 offset-md-4" (ngSubmit)="onSaveCreateProduct()" [formGroup]="form">
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <input type="text" class="form-control" formControlName="name" placeholder="Name">
-      </div>
-      <div class="form-group col-md-6">
-        <input type="text" class="form-control" formControlName="description" placeholder="Description">
-      </div>
-      <div class="form-group col-md-6">
-        <input type="number" class="form-control" formControlName="price" placeholder="Price">
-      </div>
-      <div class="form-group col-md-6">
-        <input type="number" class="form-control" formControlName="stock" placeholder="Stock">
-      </div>
+<div class="form-container">
+  <div class="form-content">
+    <form (ngSubmit)="onSaveCreateProduct()" [formGroup]="form">
+      <div class="form-row prueba">
+        <div class="form-group ">
+          <input type="text" class="form-control" formControlName="name" placeholder="Name">
+        </div>
+        <div class="form-group ">
+          <input type="text" class="form-control" formControlName="description" placeholder="Description">
+        </div>
+        <div class="form-group ">
+          <input type="number" class="form-control" formControlName="price" placeholder="Price">
+        </div>
+        <div class="form-group ">
+          <input type="number" class="form-control" formControlName="stock" placeholder="Stock">
+        </div>
 
-      <div class="form-group col-md-6">
-        <img *ngIf="(image$ | async) as image" [src]="image" alt="product-image">
-        <input style="color: white;" type="file" (change)="uploadImage($event)" id="inputFile">
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-            [style.width]="(uploadPercent | async ) +  '%'">
+        <div class="form-group ">
+          <img *ngIf="(image$ | async) as image" [src]="image" alt="product-image">
+          <div class="input-group">
+            <input (change)="uploadImage($event)" type="file" class="form-control" id="inputGroupFile04"
+              aria-describedby="inputGroupFileAddon04">
           </div>
         </div>
+        <div class="form-group">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+              [style.width]="(uploadPercent | async ) +  '%'">
+            </div>
+          </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-color form-group">Save</button>
       </div>
-      <br>
-      <button type="submit" class="btn btn-color">Save</button>
-    </div>
-  </form>
+    </form>
+  </div>
 
   <button type="button" class="btn btn-secondary m-2 btn-product" (click)="onGoBacktoList()">Back to List</button>
 </div>
