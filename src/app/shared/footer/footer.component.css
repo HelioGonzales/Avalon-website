@@ -3,7 +3,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #2d0e0e;
+  /* background-color: #2d0e0e; */
+  background: black;
   height: 6rem;
   color: #ffffff;
   font-size: 2rem;

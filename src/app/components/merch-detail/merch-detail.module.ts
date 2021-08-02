@@ -3,15 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { MerchDetailRoutingModule } from './merch-detail-routing.module';
 import { MerchDetailComponent } from './merch-detail.component';
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [
-    MerchDetailComponent
-  ],
-  imports: [
-    CommonModule,
-    MerchDetailRoutingModule
-  ]
+  declarations: [MerchDetailComponent],
+  imports: [CommonModule, MerchDetailRoutingModule, SharedModule],
 })
-export class MerchDetailModule { }
+export class MerchDetailModule {}

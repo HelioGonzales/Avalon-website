@@ -2,9 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  justify-items: center;
-  align-items: center;
-  margin-top: 5rem;
+  /* justify-items: center; */
+  /* align-items: center; */
+
+  margin-top: 10rem;
   padding: 2rem;
   min-height: 100vh;
 }

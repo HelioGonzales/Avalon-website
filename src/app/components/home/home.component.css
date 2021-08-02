@@ -12,7 +12,11 @@ img {
 } */
 
 .banner-image {
-  background-image: url("./../../../assets/cover-photo.jpg");
+  background-image: url("./../../../assets/cover-playing.jpg");
   background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
   filter: grayscale(50%);
+  /* background-position: top center; */
+  background-position: center;
 }

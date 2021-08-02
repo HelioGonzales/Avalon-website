@@ -23,11 +23,16 @@ export class OrderListComponent implements OnInit {
   }
 
   async onGoToDelete(orderId: any): Promise<void> {
-    try {
-      await this.orderSvc.onDeleteOrder(orderId);
-      alert('deleted');
-    } catch (err) {
-      console.log(err);
+    const confirmacion = confirm('are you sure to  delete it?');
+    if (confirmacion) {
+      try {
+        await this.orderSvc.onDeleteOrder(orderId);
+        alert('deleted');
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      return;
     }
   }
 }

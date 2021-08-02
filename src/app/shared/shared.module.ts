@@ -7,6 +7,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShowFormComponent } from './show-form/show-form.component';
 import { CartComponent } from './cart/cart.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CartComponent } from './cart/cart.component';
     ProductFormComponent,
     ShowFormComponent,
     CartComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [
@@ -23,6 +25,7 @@ import { CartComponent } from './cart/cart.component';
     ProductFormComponent,
     ShowFormComponent,
     CartComponent,
+    LoadingSpinnerComponent,
   ],
 })
 export class SharedModule {}

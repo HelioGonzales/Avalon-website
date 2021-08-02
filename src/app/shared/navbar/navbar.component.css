@@ -1,5 +1,10 @@
+nav {
+  color: white;
+  font-size: 2rem;
+}
 .menu-nav {
-  background-color: #2d0e0e;
+  /* background-color: #2d0e0e; */
+  background: black;
 }
 
 .logo {
@@ -12,4 +17,18 @@
   transform: scale(1.1);
   cursor: pointer;
   transition: all 0.7 ease-in-out;
+}
+
+a.active {
+  color: white;
+  font-size: larger;
+}
+
+@media only screen and (max-width: 850px) {
+  .navbar-nav.mx-auto {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }

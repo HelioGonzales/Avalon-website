@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  background-image: url(./assets/cover-bg.jpg);
+  /* background-image: url(./assets/bg-dark-steel.jpg); */
+  background: #000;
   background-size: cover;
   /* position: relative; */
   background-repeat: no-repeat;
   background-position: center center;
+  font-family: "Staatliches", cursive;
+  color: white;
 }
 
 /* body:before {

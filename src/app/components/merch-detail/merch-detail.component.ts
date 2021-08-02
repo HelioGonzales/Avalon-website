@@ -13,6 +13,7 @@ import { Product } from 'src/app/shared/models/product.model';
 export class MerchDetailComponent implements OnInit {
   productId: any;
   product!: Product;
+  showSpinner: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +33,9 @@ export class MerchDetailComponent implements OnInit {
         // console.log(product);
         this.product = product;
       });
+      this.merchSvc
+        .getProduct(this.productId)
+        .subscribe(() => (this.showSpinner = false));
     });
   }
 

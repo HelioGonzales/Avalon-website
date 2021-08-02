@@ -30,11 +30,16 @@ export class ShowListComponent implements OnInit {
   }
 
   async onGoToDelete(showId: any): Promise<void> {
-    try {
-      await this.showSvc.onDeleteShow(showId);
-      alert('deleted');
-    } catch (err) {
-      console.log(err);
+    const confirmacion = confirm('are you sure to  delete it?');
+    if (confirmacion) {
+      try {
+        await this.showSvc.onDeleteShow(showId);
+        alert('deleted');
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      return;
     }
   }
 }

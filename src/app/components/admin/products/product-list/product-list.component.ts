@@ -33,11 +33,16 @@ export class ProductListComponent implements OnInit {
   }
 
   async onGoToDelete(productId: any): Promise<void> {
-    try {
-      await this.productSvc.onDeleteProduct(productId);
-      alert('deleted');
-    } catch (err) {
-      console.log(err);
+    const confirmacion = confirm('are you sure you want to delete it?');
+    if (confirmacion) {
+      try {
+        await this.productSvc.onDeleteProduct(productId);
+        alert('deleted');
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      return;
     }
   }
 }

@@ -8,7 +8,10 @@ import { ShowServiceService } from 'src/app/core/services/show-service.service';
 })
 export class ShowsComponent implements OnInit {
   show$ = this.showSvc.show;
+  showSpinner: boolean = true;
   constructor(private showSvc: ShowServiceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.show$.subscribe(() => (this.showSpinner = false));
+  }
 }

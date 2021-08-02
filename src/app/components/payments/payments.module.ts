@@ -4,14 +4,9 @@ import { CommonModule } from '@angular/common';
 import { PaymentsRoutingModule } from './payments-routing.module';
 import { PaymentsComponent } from './payments.component';
 
-
 @NgModule({
-  declarations: [
-    PaymentsComponent
-  ],
-  imports: [
-    CommonModule,
-    PaymentsRoutingModule
-  ]
+  declarations: [PaymentsComponent],
+  imports: [CommonModule, PaymentsRoutingModule],
+  exports: [PaymentsComponent],
 })
-export class PaymentsModule { }
+export class PaymentsModule {}

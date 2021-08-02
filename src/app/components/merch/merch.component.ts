@@ -8,7 +8,11 @@ import { ProductServicesService } from 'src/app/core/services/product-services.s
 })
 export class MerchComponent implements OnInit {
   product$ = this.productSvc.product;
+
+  showSpinner: boolean = true;
   constructor(private productSvc: ProductServicesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.product$.subscribe(() => (this.showSpinner = false));
+  }
 }

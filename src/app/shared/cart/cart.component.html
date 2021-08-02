@@ -1,9 +1,11 @@
 <ng-container *ngIf="{ total: total$ | async, quantity: quantity$ | async } as dataCart">
-  <ng-container *ngIf="dataCart.total">
-    <i style="color: white; font-size: 30px;" class="bi bi-cart-fill position-relative"><span style="font-size: 10px;"
-        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-        {{ dataCart.quantity }}
-        <span class="visually-hidden">unread messages</span>
-      </span></i>
-  </ng-container>
+  <!-- <ng-container *ngIf="dataCart.total" > -->
+
+  <i style="color: white; font-size: 30px;" class="bi bi-cart-fill position-relative"><span style="font-size: 10px;"
+      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      {{ dataCart.quantity }}
+      <span class="visually-hidden">unread messages</span>
+    </span></i>
+
+  <!-- </ng-container> -->
 </ng-container>

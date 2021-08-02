@@ -11,6 +11,7 @@
     </div> -->
 
 <div class="container">
+  <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
   <div class="box" *ngFor="let product of product$ | async">
     <div class="imgBox">
       <img [src]="product.image" [alt]="product.name">

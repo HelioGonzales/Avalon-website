@@ -38,6 +38,33 @@ export class ShoppingCartService {
     this.quantitySubject.next(0);
   }
 
+  /* *************************************************************************************** */
+
+  removeProductFromCart(product: Product): void {
+    this.removeFromCart(product);
+    this.quantityProducts();
+    this.calcTotal();
+  }
+
+  private removeFromCart(product: Product): void {
+    let position = 0;
+    const isProductInCart = this.products.find(({ id }, index) => {
+      position = index;
+      return id === product.id;
+    });
+
+    if (isProductInCart) {
+      isProductInCart.qty--;
+      if (isProductInCart.qty === 0) {
+        this.products.splice(position, 1);
+      }
+    }
+
+    this.cartSubject.next(this.products);
+  }
+
+  /* *************************************************************************************** */
+
   private addToCart(product: Product): void {
     const isProductInCart = this.products.find(({ id }) => id === product.id);
 

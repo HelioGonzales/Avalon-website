@@ -34,12 +34,17 @@ export class ShowDetailComponent implements OnInit {
   }
 
   async onGoToDelete(): Promise<void> {
-    try {
-      await this.showSvc.onDeleteShow(this.show.id);
-      alert('delete');
-      this.onGoBackToList();
-    } catch (err) {
-      console.log(err);
+    const confirmacion = confirm('are you sure you want to delete it?');
+    if (confirmacion) {
+      try {
+        await this.showSvc.onDeleteShow(this.show.id);
+        alert('deleted');
+        this.onGoBackToList();
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      return;
     }
   }
 }

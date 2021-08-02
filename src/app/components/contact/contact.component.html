@@ -4,18 +4,20 @@
       <h3>Contact us</h3>
       <div class="mb-3">
 
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" name="name">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" name="name"
+          pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
       </div>
       <div class="mb-3">
 
         <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com"
-          name="email">
+          name="email" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
       </div>
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Write Something</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="textarea"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="textarea"
+          data-pattern="^.{1,255}$" required></textarea>
       </div>
-      <button class="btn btn-color">SEND</button>
+      <button (click)="onSubmitMessage()" class="btn btn-color">SEND</button>
     </form>
   </div>
 </div>

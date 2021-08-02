@@ -27,12 +27,17 @@ export class OrderDetailComponent implements OnInit {
   }
 
   async onGoToDelete(): Promise<void> {
-    try {
-      await this.orderSvc.onDeleteOrder(this.order.id);
-      alert('deleted');
-      this.onGoBackToList();
-    } catch (err) {
-      console.log(err);
+    const confirmacion = confirm('are you sure you want to delete it?');
+    if (confirmacion) {
+      try {
+        await this.orderSvc.onDeleteOrder(this.order.id);
+        alert('deleted');
+        this.onGoBackToList();
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      return;
     }
   }
 }

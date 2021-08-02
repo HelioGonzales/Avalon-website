@@ -1,4 +1,5 @@
 <div class="table-container">
+
   <table class="table text-light">
     <thead>
       <tr>
@@ -8,10 +9,14 @@
         <th scope="col">See more</th>
       </tr>
     </thead>
+
     <tbody>
+
       <tr *ngFor="let show of show$ | async">
+
         <th scope="row">{{ show.date | date }}</th>
         <td>{{ show.place }}</td>
+        <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
         <td>{{ show.time }}</td>
         <td><a href={{show.link}}><button class="btn btn-color">GO</button></a></td>
       </tr>

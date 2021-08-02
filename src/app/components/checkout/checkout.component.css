@@ -1,6 +1,12 @@
 .form-container {
-  padding: 2rem;
+  padding: 3rem;
+
   margin-top: 5rem;
+}
+
+form {
+  width: 70vw;
+  margin: auto;
 }
 
 .btn-color {

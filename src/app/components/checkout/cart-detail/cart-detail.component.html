@@ -2,18 +2,23 @@
   <table class="table text-white">
     <thead>
       <tr>
+        <th>Photo</th>
         <th>Item</th>
         <th>Qty</th>
         <th>Price</th>
         <th>Sub total</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of cart$ | async">
+        <td><img [src]="item.image" [alt]="item.name"></td>
         <td>{{ item.name }}</td>
         <td>{{ item.qty}}</td>
         <td>{{ item.price | currency}}</td>
         <td>{{ item.qty * item.price | currency}}</td>
+
+        <td><a class="mouseHover" (click)="onDeleteFromCart(item)">delete</a></td>
       </tr>
     </tbody>
   </table>
