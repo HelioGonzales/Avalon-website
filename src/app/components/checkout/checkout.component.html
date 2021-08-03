@@ -5,14 +5,35 @@
       <div class="form-group">
         <label for="exampleInputName1" class="form-label mt-4">Name</label>
         <input formControlName="name" type="name" class="form-control" id="exampleInputName1"
-          aria-describedby="nameHelp" placeholder="Enter name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+          aria-describedby="nameHelp" placeholder="Enter name">
+
+        <div class="alert-danger" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+          <div class="container-error-message p-1" *ngIf="name?.errors?.required">
+            Name is required
+          </div>
+          <div class=" container-error-message p-1" *ngIf="name?.errors?.minlength">
+            Name need at least 5 characters long
+          </div>
+        </div>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
         <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
-          aria-describedby="emailHelp" placeholder="Enter email"
-          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+          aria-describedby="emailHelp" placeholder="Enter email">
+
+        <div class="alert-danger" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <div class="container-error-message p-1" *ngIf="email?.errors?.required">
+            email is required
+          </div>
+          <div class=" container-error-message p-1" *ngIf="email?.errors?.minlength">
+            email need at least 5 characters long
+          </div>
+          <div class=" container-error-message p-1"
+            *ngIf="(email?.dirty || email?.touched) && email?.invalid && email?.errors?.pattern">
+            email is not valid
+          </div>
+        </div>
       </div>
 
       <fieldset class="form-group">
@@ -39,12 +60,32 @@
 
       <ng-container *ngIf="isDelivery; else showStores">
         <div class="form__element">
-          <input formControlName="shippingAddress" class="form-control" type="text" placeholder="Shipping address"
-            name="shippingAddress">
+          <input formControlName="shippingAddress" class="form-control" type="text" placeholder="Shipping address">
+
+          <!-- <div class="alert-danger"
+            *ngIf="shippingAddress?.invalid && (shippingAddress?.dirty || shippingAddress?.touched)">
+            <div class="container-error-message p-1" *ngIf="shippingAddress?.errors?.required">
+              shippingAddress is required
+            </div>
+            <div class=" container-error-message p-1" *ngIf="shippingAddress?.errors?.minlength">
+              shippingAddress need at least 5 characters long
+            </div>
+          </div> -->
+
         </div>
         <br>
         <div class="form__element">
-          <input formControlName="city" class="form-control" type="text" placeholder="city" name="city">
+          <input formControlName="city" class="form-control" type="text" placeholder="city">
+
+          <!-- <div class="alert-danger" *ngIf="city?.invalid && (city?.dirty || city?.touched)">
+            <div class="container-error-message p-1" *ngIf="city?.errors?.required">
+              city is required
+            </div>
+            <div class=" container-error-message p-1" *ngIf="city?.errors?.minlength">
+              city need at least 5 characters long
+            </div>
+          </div> -->
+
         </div>
       </ng-container>
       <ng-template #showStores>

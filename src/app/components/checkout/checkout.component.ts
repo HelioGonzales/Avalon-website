@@ -72,7 +72,7 @@ export class CheckoutComponent implements OnInit {
     this.onCreateStripeCheckout(order);
 
     //Here we have to create thank you page
-    // alert('thank you your order will be processed');
+    alert('thank you your order will be processed');
     // this.router.navigate(['/']);
     this.shopingCartSvc.resetCart(), delay(2000);
   }
@@ -115,11 +115,27 @@ export class CheckoutComponent implements OnInit {
 
   private formBuild(): void {
     this.form = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      store: '',
-      shippingAddress: '',
-      city: '',
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.pattern('^[A-Za-zÑñÁáÉéÍíÓóÚúÜüs]+$'),
+        ],
+      ],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.pattern(
+            '^[a-z0-9]+(.[_a-z0-9]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,15})$'
+          ),
+        ],
+      ],
+      store: [''],
+      shippingAddress: [''],
+      city: [''],
       date: this.getCurrentDate(),
       // isDelivery: this.isDelivery,
     });
@@ -128,7 +144,17 @@ export class CheckoutComponent implements OnInit {
   private getCurrentDate(): string {
     return new Date().toLocaleDateString();
   }
+
+  get name() {
+    return this.form.get('name');
+  }
+  get email() {
+    return this.form.get('email');
+  }
+  // get shippingAddress() {
+  //   return this.form.get('shippingAddress');
+  // }
+  // get city() {
+  //   return this.form.get('city');
+  // }
 }
-// function createStripeCheckout() {
-//   throw new Error('Function not implemented.');
-// }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { ProductServicesService } from 'src/app/core/services/product-services.service';
 import { Product } from 'src/app/shared/models/product.model';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-product-form',
@@ -13,6 +14,11 @@ import { Product } from 'src/app/shared/models/product.model';
   styleUrls: ['./product-form.component.css'],
 })
 export class ProductFormComponent implements OnInit {
+  @ViewChild('myInput')
+  myInputVariable!: ElementRef;
+  @ViewChild('myInput2')
+  myInputVariable2!: ElementRef;
+
   product!: Product;
   form!: FormGroup;
   image$!: Observable<any>;
@@ -68,7 +74,15 @@ export class ProductFormComponent implements OnInit {
 
       this.productService.onSaveProduct(product, productId);
       this.form.reset();
+      this.resetImg();
+      alert('Your product is uploaded');
     }
+  }
+
+  resetImg() {
+    // console.log(this.myInputVariable.nativeElement.files);
+    this.myInputVariable.nativeElement.value = '';
+    // console.log(this.myInputVariable.nativeElement.files);
   }
 
   onGoBacktoList(): void {

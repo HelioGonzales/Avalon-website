@@ -18,9 +18,9 @@
         <div class="form-group">
 
           <div class="form-group ">
-            <img *ngIf="(image$ | async) as image" [src]="image" alt="product-image">
+            <!-- <img *ngIf="(image$ | async) as image" [src]="image" alt="product-image"> -->
             <div class="input-group">
-              <input (change)="uploadImage($event)" type="file" class="form-control" id="inputGroupFile04"
+              <input #myInput (change)="uploadImage($event)" type="file" class="form-control" id="inputGroupFile04"
                 aria-describedby="inputGroupFileAddon04">
             </div>
           </div>
