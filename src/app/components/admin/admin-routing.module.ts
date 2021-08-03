@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
+import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
+import { ContactListTrackedComponent } from './contacts/contact-list-tracked/contact-list-tracked.component';
+
 import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
 import { OrderListComponent } from './orders/order-list/order-list.component';
 import { CreateProductComponent } from './products/create-product/create-product.component';
@@ -60,6 +63,15 @@ const routes: Routes = [
       {
         path: 'order-detail',
         component: OrderDetailComponent,
+      },
+
+      {
+        path: 'contact-detail',
+        component: ContactDetailComponent,
+      },
+      {
+        path: 'contact-list-tracked',
+        component: ContactListTrackedComponent,
       },
     ],
   },

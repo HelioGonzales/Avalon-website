@@ -1,0 +1,35 @@
+<div class=" table-container">
+  <table class="table text-light">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contact$ | async">
+        <td scope="row">{{ contact?.name }}</td>
+        <td>{{ contact?.email }}</td>
+        <td role="group">
+          <div class="dropdown nav-dropdown">
+            <button class="btn btn-color dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Actions
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><button type="submit" class="btn btn-outline-warning m-1 "
+                  (click)="onGoToDetail(contact)">Details</button>
+              </li>
+              <li><button type="submit" class="btn btn-outline-danger m-1"
+                  (click)="onGoToDelete(contact?.id)">Delete</button>
+              </li>
+            </ul>
+          </div>
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

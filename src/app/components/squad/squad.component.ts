@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { OrderServiceService } from 'src/app/core/services/order-service.service';
 
 @Component({
-  selector: 'app-payments',
-  templateUrl: './payments.component.html',
-  styleUrls: ['./payments.component.css'],
+  selector: 'app-squad',
+  templateUrl: './squad.component.html',
+  styleUrls: ['./squad.component.css'],
 })
-export class PaymentsComponent implements OnInit {
+export class SquadComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,0 +1,7 @@
+.success-container {
+  height: 100vh;
+  margin-top: 8rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

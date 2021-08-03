@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ContactService } from 'src/app/core/services/contact.service';
+import { Contact } from 'src/app/shared/models/contact.model';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +11,12 @@ import { Router } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
   form!: FormGroup;
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  contact!: Contact;
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private contactSvc: ContactService
+  ) {
     this.formBuild();
   }
 
@@ -18,8 +25,11 @@ export class ContactComponent implements OnInit {
   onSubmitMessage() {
     console.log(this.form.value);
 
-    // this.router.navigate(['/']);
     if (this.form.valid) {
+      const contact = this.form.value;
+      const contactId = this.contact?.id || null;
+      this.contactSvc.onSaveContact(contact, contactId);
+      console.log(this.form.value);
       alert('Thank you for your contact');
       this.form.reset();
     } else {

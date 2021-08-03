@@ -1,0 +1,21 @@
+<div class="merch-detail-container ">
+  <div class="merch-detail-content">
+    <div class="merch-detail-content-item contentItem">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Name: {{ contact?.name }}
+        </li>
+        <li class="list-group-item">
+          Email: {{ contact?.email }}
+        </li>
+        <li class="list-group-item">
+          Message: {{ contact?.message }}
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-danger m-1 btn-sm" (click)="onGoToDelete()">Delete</button>
+    </div>
+    <button type="button" class="btn btn-secondary m-1" (click)="onGoBackToList()">Back to List</button>
+  </div>
+</div>

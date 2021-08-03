@@ -71,10 +71,22 @@ const routes: Routes = [
             (m) => m.CheckoutModule
           ),
       },
+      {
+        path: 'success',
+        loadChildren: () =>
+          import('./components/success/success.module').then(
+            (m) => m.SuccessModule
+          ),
+      },
+      {
+        path: 'cancel',
+        loadChildren: () =>
+          import('./components/cancel/cancel.module').then(
+            (m) => m.CancelModule
+          ),
+      },
     ],
   },
-  { path: 'about', loadChildren: () => import('./components/about/about.module').then(m => m.AboutModule) },
-
   {
     path: '**',
     component: PageNotFoundComponent,

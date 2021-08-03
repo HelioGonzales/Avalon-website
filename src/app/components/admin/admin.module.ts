@@ -17,6 +17,10 @@ import { ShowListComponent } from './shows/show-list/show-list.component';
 import { OrderListComponent } from './orders/order-list/order-list.component';
 import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
 
+import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
+
+import { ContactListTrackedComponent } from './contacts/contact-list-tracked/contact-list-tracked.component';
+
 @NgModule({
   declarations: [
     AdminComponent,
@@ -31,6 +35,9 @@ import { OrderDetailComponent } from './orders/order-detail/order-detail.compone
     ShowListComponent,
     OrderListComponent,
     OrderDetailComponent,
+    ContactDetailComponent,
+
+    ContactListTrackedComponent,
   ],
   imports: [
     CommonModule,

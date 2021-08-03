@@ -12,7 +12,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let order of orders$ | async">
-        <td scope="row">{{ order.date }}</td>
+        <td scope="row">{{ order?.date }}</td>
         <!-- <td>{{ order?.store }}</td> -->
         <!-- <td>{{ order?.city }}</td> -->
         <td>{{ order?.total }}</td>
