@@ -1,12 +1,12 @@
 .merch-detail-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   min-width: 80vw;
   min-height: 100vh;
   color: white;
   padding: 1rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .merch-detail-content {
@@ -32,8 +32,8 @@
 }
 
 img {
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: 400px;
 }
 
 .btn-color {

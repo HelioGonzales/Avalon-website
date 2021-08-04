@@ -21,7 +21,8 @@ export class CartDetailComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onDeleteFromCart(product: Product): void {
+  onDeleteFromCart(product: Product, event: Event): void {
+    event.preventDefault();
     let confirmacion = confirm('Are you sure you want to remove?');
     if (confirmacion) {
       this.shoppingCartSvc.removeProductFromCart(product);

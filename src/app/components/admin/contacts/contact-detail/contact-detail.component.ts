@@ -17,7 +17,7 @@ export class ContactDetailComponent implements OnInit {
 
   ngOnInit(): void {
     if (typeof this.contact === 'undefined') {
-      this.router.navigate(['/admin/contact-list']);
+      this.router.navigate(['/admin/contact-list-tracked']);
     }
   }
 

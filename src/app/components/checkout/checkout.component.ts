@@ -119,14 +119,15 @@ export class CheckoutComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(5),
-          Validators.pattern('^[A-Za-zÑñÁáÉéÍíÓóÚúÜüs]+$'),
+          Validators.maxLength(15),
+          // Validators.pattern('^[A-Za-zÑñÁáÉéÍíÓóÚúÜüs]+$'),
         ],
       ],
       email: [
         '',
         [
           Validators.required,
-          Validators.minLength(5),
+          // Validators.minLength(5),
           Validators.pattern(
             '^[a-z0-9]+(.[_a-z0-9]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,15})$'
           ),

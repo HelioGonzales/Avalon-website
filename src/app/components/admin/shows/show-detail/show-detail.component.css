@@ -1,12 +1,12 @@
 .merch-detail-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   min-width: 80vw;
   min-height: 100vh;
   color: white;
   padding: 1rem;
-  /* margin-top: 5rem; */
+  margin-top: 2rem;
 }
 
 .merch-detail-content {
@@ -22,7 +22,7 @@
 
 .merch-detail-content-item {
   text-align: center;
-  width: 100%;
+  width: 60%;
   height: 100%;
 }
 

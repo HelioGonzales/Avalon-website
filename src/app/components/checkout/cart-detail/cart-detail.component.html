@@ -18,7 +18,7 @@
         <td>{{ item.price | currency}}</td>
         <td>{{ item.qty * item.price | currency}}</td>
 
-        <td><a class="mouseHover" (click)="onDeleteFromCart(item)">delete</a></td>
+        <td><button class="btn btn-danger" (click)="onDeleteFromCart(item, $event )">delete</button></td>
       </tr>
     </tbody>
   </table>
