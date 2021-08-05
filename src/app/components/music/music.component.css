@@ -6,8 +6,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  justify-items: center;
-  align-items: center;
+  /* justify-items: center; */
+  /* align-items: center; */
   padding: 2rem;
   min-height: 100vh;
   margin-top: 5rem;
@@ -21,8 +21,13 @@
   border: none;
 }
 
+.music-card > a {
+  width: 100%;
+  height: 100%;
+}
+
 .music-card:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   transform: scale(1.05);
   transition: all 0.5s ease;
 }
