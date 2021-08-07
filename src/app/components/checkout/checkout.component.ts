@@ -31,10 +31,10 @@ export class CheckoutComponent implements OnInit {
 
   stores = [
     {
-      store: 'donde tu mama calata',
+      store: 'Av. San Martin #15. Ica - Peru',
     },
     {
-      store: 'donde tu tia calata',
+      store: 'Centralna #11. Krakow - Poland',
     },
   ];
   constructor(
